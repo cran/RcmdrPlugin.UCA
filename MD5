@@ -1,10 +1,12 @@
-ccdeb041b9c00a24543f4e4a3225ee08 *DESCRIPTION
-1a8a0e89e3212c6c91ce994d8259eb55 *R/RcmdrPlugin.UCA.R
+6b7fa19be1a8062762125d296ab9f8f7 *ChangeLog
+0b0f81102276fe005cd47b5435bdc55f *DESCRIPTION
+263338b65152279ca8a574e1b72e6282 *NAMESPACE
+98be88faa70971d811c52bb2897687bd *R/RcmdrPlugin.UCA.R
 dfdc33ccbfb8550ea82495b6f9f773b4 *inst/etc/menus.txt
 a36722af3c22e5c83ebe22fbcdb73e0e *inst/po/es/LC_MESSAGES/R-RcmdrPlugin.UCA.mo
 b90d693ba73c810d8fe9cfebf73b7a01 *man/RcmdrPlugin.UCA-internal.Rd
-7876386668c276665b7d98f913d181b4 *man/RcmdrPlugin.UCA-package.Rd
-633d991613815cae87adc5623f43b0b2 *man/RcmdrPlugin.UCA.es-package.Rd
+18b6f120b191de40f903221525172f55 *man/RcmdrPlugin.UCA-package.Rd
+2520d25410a8deb3fba542c08b2971d1 *man/RcmdrPlugin.UCA.es-package.Rd
 75e9a004a9b69f8dacade67950fed012 *po/R-RcmdrPlugin.UCA-es.po
 96ee94f50484e9eed202bacc3dadd176 *po/R-RcmdrPlugin.UCA.mo
 8f92a2f247f19f6aeeec18970ea03b6e *po/R-RcmdrPlugin.UCA.pot
