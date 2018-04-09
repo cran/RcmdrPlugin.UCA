@@ -1,7 +1,4 @@
-import("car")       # For examples
-import("randtests") # For examples
 import("Rcmdr")
-import("stats")
 
 importFrom("randtests", randtest.runs.test = "runs.test")
 importFrom("TeachingDemos", "sigma.test")
