@@ -12,7 +12,7 @@
 
 <meta name="author" content="Manuel Munoz-Marquez" />
 
-<meta name="date" content="2018-06-12" />
+<meta name="date" content="2018-10-16" />
 
 <title>Additional options in Rcmdr using RcmdrPlugin.UCA</title>
 
@@ -70,7 +70,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 
 <h1 class="title toc-ignore">Additional options in Rcmdr using RcmdrPlugin.UCA</h1>
 <h4 class="author"><em>Manuel Munoz-Marquez</em></h4>
-<h4 class="date"><em>2018-06-12</em></h4>
+<h4 class="date"><em>2018-10-16</em></h4>
 
 
 
@@ -87,8 +87,8 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <div id="test-and-confidence-interval-for-the-variance-of-a-normal-population" class="section level1">
 <h1>Test and confidence interval for the variance of a normal population</h1>
 <p>Within the menu “Statistics” -&gt; “Variances”, a new entry is provided to calculate confidence intervals and make contrasts on the variance in a normal population.This option uses the <code>sigma.test</code> function of the TeachingDemos package.</p>
-<div id="example-of-using-the-signle-sample-variance-test-menu" class="section level2">
-<h2>Example of using the “Signle-Sample Variance Test…” menu</h2>
+<div id="example-of-using-the-single-sample-variance-test-menu" class="section level2">
+<h2>Example of using the “Single-Sample Variance Test…” menu</h2>
 <p>First we will load the randtest package from which we will load the data. For it:</p>
 <ol style="list-style-type: decimal">
 <li>From the Rcmdr menu, choose the option “Tools” -&gt; “Load package(s) …”</li>
@@ -98,7 +98,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>In the message window should appear <code>[x] NOTE: Packages loaded: randtest</code>. If randtest does not appear in the list, you must first install the package.</p>
 <p>Next we will load a set of data, for example, “sweetpotato” through the following steps:</p>
 <ol style="list-style-type: decimal">
-<li>Choose from the Rcmdr menu: “Data” -&gt; “Packet data sets” -&gt; “Read data set from attached package…”</li>
+<li>Choose from the Rcmdr menu: “Data” -&gt; “Package data sets” -&gt; “Read data set from attached package…”</li>
 <li>Press twice on “randtests”</li>
 <li>Click on “sweetpotato” and on “Accept”.</li>
 </ol>
@@ -135,7 +135,7 @@ sweetpotato &lt;-<span class="st"> </span><span class="kw">as.data.frame</span> 
 <p>Two options are provided within the “Non-parametric Test” menu to perform the randomness test according to the type of variable.</p>
 <div id="randomness-test-for-a-dichotomous-variable" class="section level2">
 <h2>Randomness test for a dichotomous variable</h2>
-<p>Within the menu “Statistics” -&gt; “Non-parametric tests” -&gt; “Randomness test for a factor of two levels…”, a new entry is provided to test the randomness of a factor-type variable with two levels. This option uses the <code>runs.test</code> function of the tseries package, although to avoid conflicts it has been renamed<code>twolevelfactor.runs.test</code>.</p>
+<p>Within the menu “Statistics” -&gt; “Non-parametric tests” -&gt; “Randomness test for a factor of two levels…”, a new entry is provided to test the randomness of a factor-type variable with two levels. This option uses the <code>runs.test</code> function of the tseries package, although to avoid conflicts it has been renamed as <code>twolevelfactor.runs.test</code>.</p>
 <div id="example-of-using-the-menu-randomness-test-for-a-two-level-factor" class="section level3">
 <h3>Example of using the menu “Randomness test for a two-level factor…”</h3>
 <p>First we will load a set of data, for example, “AMSsurvey” using the following steps:</p>
@@ -157,12 +157,12 @@ sweetpotato &lt;-<span class="st"> </span><span class="kw">as.data.frame</span> 
 <span class="co">#&gt; data:  sex</span>
 <span class="co">#&gt; Standard Normal = 4.5917, p-value = 4.397e-06</span>
 <span class="co">#&gt; alternative hypothesis: two.sided</span></code></pre></div>
-<p>We rejected the null hypothesis of randomness with a p-value of <span class="math inline">\(4.3973622\times 10^{-6}\)</span>, before proceeding with the study we would have to investigate the cause of this lack of randomness.</p>
+<p>We rejected the null hypothesis of randomness with a p-value of 4.397362210^{-6}, before proceeding with the study we would have to investigate the cause of this lack of randomness.</p>
 </div>
 </div>
 <div id="randomness-test-for-a-numerical-variable" class="section level2">
 <h2>Randomness test for a numerical variable</h2>
-<p>Within the “Statistics” menu -&gt; “Non-parametric tests” -&gt; “Randomness test for a numeric variable …”, a new entry is provided to test the randomness of a numeric variable. This option uses the <code>runs.test</code> function of the randtest package, although to avoid conflicts it has been renamed<code>numeric.runs.test</code>.</p>
+<p>Within the “Statistics” menu -&gt; “Non-parametric tests” -&gt; “Randomness test for a numeric variable …”, a new entry is provided to test the randomness of a numeric variable. This option uses the <code>runs.test</code> function of the randtest package, although to avoid conflicts it has been renamed as <code>numeric.runs.test</code>.</p>
 <div id="example-of-using-the-menu-randomness-test-for-a-numeric-variable" class="section level3">
 <h3>Example of using the menu “Randomness test for a numeric variable …”</h3>
 <p>First, if we have not already done so, we will load the sweetpotato data set. If the data set is loaded but not active, click the button next to the text “Data set:”, select sweetpotato and click “OK”. The text of the button changes to “sweetpotato”.</p>
@@ -271,10 +271,10 @@ sweetpotato &lt;-<span class="st"> </span><span class="kw">as.data.frame</span> 
 <span class="co">#&gt; Multiple R-squared:  0.001047,   Adjusted R-squared:  0.000663 </span>
 <span class="co">#&gt; F-statistic: 2.725 on 1 and 2599 DF,  p-value: 0.09891</span></code></pre></div>
 <p>Note that the active model is set to RegModel.1 So if you want to predict the values for income for age data in Chile dataset. Select from Rcmdr menu: “Models” -&gt; “Predict using active model” -&gt; “Add predictions to existing dataset…”. In the dialog select a compatible dataset with the model. In this case select Chile. Rcmdr reply with the following command in source pane (R Script)</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">Chile<span class="op">$</span>fitted &lt;-<span class="st"> </span><span class="kw">predict</span>(RegModel<span class="fl">.1</span>, Chile)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">Chile<span class="op">$</span>fitted.RegModel<span class="fl">.1</span> &lt;-<span class="st"> </span><span class="kw">predict</span>(RegModel<span class="fl">.1</span>, Chile)</code></pre></div>
 <p>and in the output box</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">Chile<span class="op">$</span>fitted &lt;-<span class="st"> </span><span class="kw">predict</span>(RegModel<span class="fl">.1</span>, Chile)</code></pre></div>
-<p>The predicted value of income has been saved as fitted in the selected dataset (Chile). You can see the added values using the button for visualizing the data set.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">Chile<span class="op">$</span>fitted.RegModel<span class="fl">.1</span> &lt;-<span class="st"> </span><span class="kw">predict</span>(RegModel<span class="fl">.1</span>, Chile)</code></pre></div>
+<p>The predicted value of income has been saved as fitted.RegModel.1 in the selected dataset (Chile). You can see the added values using the button for visualizing the data set.</p>
 </div>
 </div>
 

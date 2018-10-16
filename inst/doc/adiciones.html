@@ -12,7 +12,7 @@
 
 <meta name="author" content="Manuel Munoz-Marquez" />
 
-<meta name="date" content="2018-06-12" />
+<meta name="date" content="2018-10-16" />
 
 <title>Opciones adicionales en Rcmdr usando RcmdrPlugin.UCA</title>
 
@@ -70,7 +70,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 
 <h1 class="title toc-ignore">Opciones adicionales en Rcmdr usando RcmdrPlugin.UCA</h1>
 <h4 class="author"><em>Manuel Munoz-Marquez</em></h4>
-<h4 class="date"><em>2018-06-12</em></h4>
+<h4 class="date"><em>2018-10-16</em></h4>
 
 
 
@@ -91,7 +91,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <h2>Ejemplo de uso del menú “Test de varianza para una muestra…”</h2>
 <p>En primer lugar cargaremos el paquete randtest del cual vamos a cargar los datos. Para ello:</p>
 <ol style="list-style-type: decimal">
-<li>Del menú de Rcmdr elegit la opción “Herramientas” -&gt; “Cargar paquete(s)…”</li>
+<li>Del menú de Rcmdr elegir la opción “Herramientas” -&gt; “Cargar paquete(s)…”</li>
 <li>Buscar en el cuadro de diálogo randtest y seleccionarlo</li>
 <li>Pulsar aceptar</li>
 </ol>
@@ -102,11 +102,11 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li>Pulsar dos veces sobre “randtests”</li>
 <li>Pulsar sobre “sweetpotato” y sobre “Aceptar”.</li>
 </ol>
-<p>Rcmdr responde con la siguiente instruccion en el cuadro de instrucciones (R Script)</p>
+<p>Rcmdr responde con la siguiente instrucción en el cuadro de instrucciones (R Script)</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">data</span>(sweetpotato, <span class="dt">package=</span><span class="st">&quot;randtests&quot;</span>)
 sweetpotato &lt;-<span class="st"> </span><span class="kw">as.data.frame</span>(sweetpotato)</code></pre></div>
 <p>En la ventana de mensajes aparecerá <code>[x] NOTA: El conjunto de datos sweetpotato tiene 70 filas y 4 columnas.</code> y en el cuadro de diálogo anexo a la etiqueta “Conjunto de datos:” aparecerá “sweetpotato”.</p>
-<p>Para construir el intervalo de confianza para sigma para la variable “yield” (rendimiento), seleccione del menú de Rcmdr: “Estadísticos” -&gt; “Varianzas” -&gt; “Test de varianza para una muestra…” seleccione “yield” y “OK”. Rcmdr responde con la siguiente instruccion en el cuadro de instrucciones (R Script)</p>
+<p>Para construir el intervalo de confianza para sigma para la variable “yield” (rendimiento), seleccione del menú de Rcmdr: “Estadísticos” -&gt; “Varianzas” -&gt; “Test de varianza para una muestra…” seleccione “yield” y “OK”. Rcmdr responde con la siguiente instrucción en el cuadro de instrucciones (R Script)</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">with</span>(sweetpotato, <span class="kw">sigma.test</span>(yield[<span class="op">!</span><span class="kw">is.na</span>(yield)], <span class="dt">alternative=</span><span class="st">'two.sided'</span>, <span class="dt">sigmasq=</span><span class="fl">1.0</span>, <span class="dt">conf.level=</span><span class="fl">0.95</span>))</code></pre></div>
 <p>y en el cuadro de salida</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">with</span>(sweetpotato, <span class="kw">sigma.test</span>(yield[<span class="op">!</span><span class="kw">is.na</span>(yield)], <span class="dt">alternative=</span><span class="st">'two.sided'</span>, <span class="dt">sigmasq=</span><span class="fl">1.0</span>, <span class="dt">conf.level=</span><span class="fl">0.95</span>))
@@ -144,10 +144,10 @@ sweetpotato &lt;-<span class="st"> </span><span class="kw">as.data.frame</span>(
 <li>Pulsar dos veces sobre “carData”</li>
 <li>Pulsar sobre “AMSsurvey” y sobre “Aceptar”.</li>
 </ol>
-<p>Rcmdr responde con la siguiente instruccion en el cuadro de instrucciones (R Script)</p>
+<p>Rcmdr responde con la siguiente instrucción en el cuadro de instrucciones (R Script)</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">data</span>(AMSsurvey, <span class="dt">package=</span><span class="st">&quot;carData&quot;</span>)</code></pre></div>
 <p>En la ventana de mensajes aparecerá <code>[x] NOTA: El conjunto de datos AMSsurvey tiene 24 filas y 5 columnas.</code> y en el cuadro de diálogo anexo a la etiqueta “Conjunto de datos:” aparecerá “AMSsurvey”.</p>
-<p>Para hacer el test de aleatoriedad a la variable “sex”, seleccionamos del menú de Rcmdr: “Estadísticos” -&gt; “Test no paramétricos” -&gt; “Test de aleatoriedad para un factor con dos niveles…”, seleccionamos “sex” y “OK”. Rcmdr responde con la siguiente instruccion en el cuadro de instrucciones (R Script)</p>
+<p>Para hacer el test de aleatoriedad a la variable “sex”, seleccionamos del menú de Rcmdr: “Estadísticos” -&gt; “Test no paramétricos” -&gt; “Test de aleatoriedad para un factor con dos niveles…”, seleccionamos “sex” y “OK”. Rcmdr responde con la siguiente instrucción en el cuadro de instrucciones (R Script)</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">with</span>(AMSsurvey, <span class="kw">twolevelfactor.runs.test</span>(sex))</code></pre></div>
 <p>y en el cuadro de salida</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">with</span>(AMSsurvey, <span class="kw">twolevelfactor.runs.test</span>(sex))
@@ -157,16 +157,16 @@ sweetpotato &lt;-<span class="st"> </span><span class="kw">as.data.frame</span>(
 <span class="co">#&gt; data:  sex</span>
 <span class="co">#&gt; Standard Normal = 4.5917, p-value = 4.397e-06</span>
 <span class="co">#&gt; alternative hypothesis: two.sided</span></code></pre></div>
-<p>Se ha rechazado la hipótesis nula de aleatoriedad con un p-valor de <span class="math inline">\(4.3973622\times 10^{-6}\)</span>, antes de proseguir con el estudio habría que investigar la causa de esta falta de aleatoriedad.</p>
+<p>Se ha rechazado la hipótesis nula de aleatoriedad con un p-valor de 4.397362210^{-6}, antes de proseguir con el estudio habría que investigar la causa de esta falta de aleatoriedad.</p>
 </div>
 </div>
 <div id="test-de-aleatoriedad-para-una-variable-numerica" class="section level2">
 <h2>Test de aleatoriedad para una variable numérica</h2>
-<p>Dentro del menú “Estadísticos” -&gt; “Test no paramétricos” -&gt; “Test de aleatoriedad para una variable numérica…”, se proporcionan una nueva entrada para contrastar la aleatoriedad de una variable de numérico. Esta opción usa la función <code>runs.test</code> del paquete randtest, si bien para evitar conflictos ha sido renombrada a <code>numeric.runs.test</code>.</p>
+<p>Dentro del menú “Estadísticos” -&gt; “Test no paramétricos” -&gt; “Test de aleatoriedad para una variable numérica…”, se proporcionan una nueva entrada para contrastar la aleatoriedad de una variable de tipo numérico. Esta opción usa la función <code>runs.test</code> del paquete randtest, si bien para evitar conflictos ha sido renombrada a <code>numeric.runs.test</code>.</p>
 <div id="ejemplo-de-uso-del-menu-test-de-aleatoriedad-para-una-variable-numerica" class="section level3">
 <h3>Ejemplo de uso del menú “Test de aleatoriedad para una variable numérica…”</h3>
 <p>En primer lugar, si aún no lo hemos hecho, cargaremos el conjunto de datos sweetpotato. Si el conjunto de datos está cargado pero no está activo, se pulsa el botón anexo al texto “Conjunto de datos:”, se selecciona sweetpotato y se pulsa “Aceptar”. El texto del botón cambia a “sweetpotato”.</p>
-<p>Para hacer el test de aleatoriedad a la variable “yield” (rendimiento), seleccionamos del menú de Rcmdr: “Estadísticos” -&gt; “Test no paramétricos” -&gt; “Test de aleatoriedad para una variable numérica…” seleccionamos “yield” y “OK”. Rcmdr responde con la siguiente instruccion en el cuadro de instrucciones (R Script)</p>
+<p>Para hacer el test de aleatoriedad a la variable “yield” (rendimiento), seleccionamos del menú de Rcmdr: “Estadísticos” -&gt; “Test no paramétricos” -&gt; “Test de aleatoriedad para una variable numérica…” seleccionamos “yield” y “OK”. Rcmdr responde con la siguiente instrucción en el cuadro de instrucciones (R Script)</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">with</span>(sweetpotato, <span class="kw">numeric.runs.test</span>(yield))</code></pre></div>
 <p>y en el cuadro de salida</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">with</span>(sweetpotato, <span class="kw">numeric.runs.test</span>(yield))
@@ -189,10 +189,10 @@ sweetpotato &lt;-<span class="st"> </span><span class="kw">as.data.frame</span>(
 <p>Si selecciona “Modelos” -&gt; “Predecir usando el modelo activo” -&gt; “Introducir datos y predecir”, se creará un nuevo conjunto de datos, como un data.frame y se abrirá el editor automáticamente. A continuación, se pueden introducir los valores de la variable predictora que se desea utilizar para la predicción, no es necesario introducir los valores de las variables no predictoras. Al cerrar el editor de datos se muestran los valores predichos.</p>
 <div id="ejemplo-de-uso-del-menu-introducir-datos-y-predecir" class="section level3">
 <h3>Ejemplo de uso del menú “Introducir datos y predecir…”</h3>
-<p>Cargar los datos “Chile” eligiendo del menu de Rcmdr: “Datos” -&gt; “Conjuntos de datos en paquetes” -&gt; “Leer conjunto de datos desde paquete adjunto…” pulsar dos veces sobre “carData”, pulsar sobre “Chile” y sobre “Aceptar”. Rcmdr responde con la siguiente instruccion en el cuadro de instrucciones (R Script)</p>
+<p>Cargar los datos “Chile” eligiendo del menu de Rcmdr: “Datos” -&gt; “Conjuntos de datos en paquetes” -&gt; “Leer conjunto de datos desde paquete adjunto…” pulsar dos veces sobre “carData”, pulsar sobre “Chile” y sobre “Aceptar”. Rcmdr responde con la siguiente instrucción en el cuadro de instrucciones (R Script)</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">data</span>(Chile, <span class="dt">package=</span><span class="st">&quot;carData&quot;</span>)</code></pre></div>
 <p>En la ventana de mensajes aparecerá <code>[x] NOTA: El conjunto de datos car tiene 2700 filas y 8 columnas.</code> y en el cuadro de diálogo anexo a la etiqueta “Conjunto de datos:” aparecerá “Chile”.</p>
-<p>Para construir un modelo seleccione del menú de Rcmdr: “Estadisticos” -&gt; “Ajuste de modelos” -&gt; “Regresion lineal…”. Como “Variable explicada” seleccione income y age como “Variables explicativas” y pulse “Aceptar”. Rcmdr responde con la siguiente instruccion en el cuadro de instrucciones (R Script)</p>
+<p>Para construir un modelo seleccione del menú de Rcmdr: “Estadisticos” -&gt; “Ajuste de modelos” -&gt; “Regresion lineal…”. Como “Variable explicada” seleccione income y age como “Variables explicativas” y pulse “Aceptar”. Rcmdr responde con la siguiente instrucción en el cuadro de instrucciones (R Script)</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">RegModel<span class="fl">.1</span> &lt;-<span class="st"> </span><span class="kw">lm</span>(income<span class="op">~</span>age, <span class="dt">data=</span>Chile)
 <span class="kw">summary</span>(RegModel<span class="fl">.1</span>)</code></pre></div>
 <p>y en el cuadro de salida</p>
@@ -217,7 +217,7 @@ sweetpotato &lt;-<span class="st"> </span><span class="kw">as.data.frame</span>(
 <span class="co">#&gt;   (99 observations deleted due to missingness)</span>
 <span class="co">#&gt; Multiple R-squared:  0.001047,   Adjusted R-squared:  0.000663 </span>
 <span class="co">#&gt; F-statistic: 2.725 on 1 and 2599 DF,  p-value: 0.09891</span></code></pre></div>
-<p>Obsérvese que el modelo se ha establecido a RegModel.1. Si quiere predecir el ingreso (income) para personas de 35 y 40 años de edad (age). Del menú de Rcmdr seleccione: “Modelos” -&gt; “Predecir usando el modelo activo” -&gt; “Introducir datos y predecir”. En la columna edad (age) introduzca 35 y 40 y cierre el editor. Rcmdr responde con la siguiente instruccion en el cuadro de instrucciones (R Script)</p>
+<p>Obsérvese que el modelo se ha establecido a RegModel.1. Si quiere predecir el ingreso (income) para personas de 35 y 40 años de edad (age). Del menú de Rcmdr seleccione: “Modelos” -&gt; “Predecir usando el modelo activo” -&gt; “Introducir datos y predecir”. En la columna edad (age) introduzca 35 y 40 y cierre el editor. Rcmdr responde con la siguiente instrucción en el cuadro de instrucciones (R Script)</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">.data &lt;-<span class="st"> </span><span class="kw">edit</span>(Chile[<span class="dv">0</span>,])
 .data
 <span class="kw">predict</span>(RegModel<span class="fl">.1</span>, .data)
@@ -244,7 +244,7 @@ sweetpotato &lt;-<span class="st"> </span><span class="kw">as.data.frame</span>(
 <h3>Ejemplo de uso del menú “Añadir predicciones a un conjunto de datos existente…”</h3>
 <p>Cargar los datos “Chile” como se describió anteriormente.</p>
 <p>Para construir un modelo seleccione del menu de Rcmdr: “Estadisticos” -&gt; “Ajuste de modelos” -&gt; “Regresion lineal…” como “Variable explicada” seleccione income y age como “Variables explicativas” y pulse “Aceptar”.</p>
-<p>Rcmdr responde con la siguiente instruccion en el cuadro de instrucciones (R Script)</p>
+<p>Rcmdr responde con la siguiente instrucción en el cuadro de instrucciones (R Script)</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">RegModel<span class="fl">.1</span> &lt;-<span class="st"> </span><span class="kw">lm</span>(income<span class="op">~</span>age, <span class="dt">data=</span>Chile)
 <span class="kw">summary</span>(RegModel<span class="fl">.1</span>)</code></pre></div>
 <p>y en la ventana de salida</p>
@@ -269,11 +269,11 @@ sweetpotato &lt;-<span class="st"> </span><span class="kw">as.data.frame</span>(
 <span class="co">#&gt;   (99 observations deleted due to missingness)</span>
 <span class="co">#&gt; Multiple R-squared:  0.001047,   Adjusted R-squared:  0.000663 </span>
 <span class="co">#&gt; F-statistic: 2.725 on 1 and 2599 DF,  p-value: 0.09891</span></code></pre></div>
-<p>Obsérvese que el modelo se ha establecido a RegModel.1. Si se quiere predecir los valores para los ingresos (income) para los valores de edad (age) en el conjunto de datos Chile del menu “Modelos” de Rcmdr seleccione: “Predicir usando el modelo activo” -&gt; “Anadir predicciones a un conjunto de datos existente…”. En el diálogo seleccione un conjunto de datos compatible con el modelo. En este caso seleccione Chile. Rcmdr responde con la siguiente instruccion en el cuadro de instrucciones (R Script)</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">Chile<span class="op">$</span>fitted &lt;-<span class="st"> </span><span class="kw">predict</span>(RegModel<span class="fl">.1</span>, Chile)</code></pre></div>
+<p>Obsérvese que el modelo se ha establecido a RegModel.1. Si se quiere predecir los valores para los ingresos (income) para los valores de edad (age) en el conjunto de datos Chile del menu “Modelos” de Rcmdr seleccione: “Predicir usando el modelo activo” -&gt; “Anadir predicciones a un conjunto de datos existente…”. En el diálogo seleccione un conjunto de datos compatible con el modelo. En este caso seleccione Chile. Rcmdr responde con la siguiente instrucción en el cuadro de instrucciones (R Script)</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">Chile<span class="op">$</span>fitted.RegModel<span class="fl">.1</span> &lt;-<span class="st"> </span><span class="kw">predict</span>(RegModel<span class="fl">.1</span>, Chile)</code></pre></div>
 <p>y en la ventana de salida</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">Chile<span class="op">$</span>fitted &lt;-<span class="st"> </span><span class="kw">predict</span>(RegModel<span class="fl">.1</span>, Chile)</code></pre></div>
-<p>Las predicciones para ingreso (income) se han guardado como fitted en el conjunto de datos (Chile). Se pueden ver los valores añadidos usando el boton “Visualizar datos”.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">Chile<span class="op">$</span>fitted.RegModel<span class="fl">.1</span> &lt;-<span class="st"> </span><span class="kw">predict</span>(RegModel<span class="fl">.1</span>, Chile)</code></pre></div>
+<p>Las predicciones para ingreso (income) se han guardado como fitted.RegModel.1 en el conjunto de datos (Chile). Se pueden ver los valores añadidos usando el boton “Visualizar datos”.</p>
 </div>
 </div>
 </div>
