@@ -18,8 +18,8 @@
 \tabular{ll}{
 Package: \tab RcmdrPlugin.UCA\cr
 Type: \tab Package\cr
-Version: \tab 4.2-6\cr
-Date: \tab 2018-12-31\cr
+Version: \tab 4.3-3\cr
+Date: \tab 2021-02-24\cr
 License: \tab GPL version 3 or newer\cr
 }
 }
@@ -41,6 +41,6 @@ Para ayuda en \enc{español}{espanol}, \enc{véase}{vease}
 }
 
 \references{
-[1] \url{http://knuth.uca.es/RcmdrPlugin.UCA}
+[1] \url{http://knuth.uca.es/RcmdrPlugin.UCA/}
 }
 

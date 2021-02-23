@@ -20,8 +20,8 @@
 \tabular{ll}{
 Paquete: \tab RcmdrPlugin.UCA\cr
 Tipo: \tab Paquete\cr
-Version: \tab 4.2-6\cr
-Fecha: \tab 2018-12-31\cr
+Version: \tab 4.3-3\cr
+Fecha: \tab 2021-02-24\cr
 Licencia: \tab GPL (>= 3)\cr
 }
 }
@@ -40,6 +40,6 @@ Para \enc{más}{mas} \enc{información}{informacion} \enc{véase}{vease} \code{\
 }
 
 \references{
-[1] \url{http://knuth.uca.es/RcmdrPlugin.UCA}
+[1] \url{http://knuth.uca.es/RcmdrPlugin.UCA/}
 }
 

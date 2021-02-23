@@ -1,11 +1,11 @@
 Package: RcmdrPlugin.UCA
 Type: Package
 Title: UCA Rcmdr Plug-in
-Version: 4.2-6
-Date: 2018-12-30
+Version: 4.3-3
+Date: 2021-02-24
 Author: Manuel Munoz-Marquez <manuel.munoz@uca.es>
 Maintainer: Manuel Munoz-Marquez <manuel.munoz@uca.es>
-Depends: randtests, rmarkdown, TeachingDemos, tseries
+Depends: qicharts2, randtests, rmarkdown, TeachingDemos, tseries
 Suggests: car, carData, knitr
 VignetteBuilder: knitr
 Imports: Rcmdr (>= 1.6)
@@ -13,11 +13,11 @@ Description: Some extensions to Rcmdr (R Commander), randomness test,
  variance test for one normal sample and predictions using active model, 
  made by R-UCA project and used in teaching statistics at University of Cadiz (UCA).
 License: GPL (>= 3)
-URL: http://knuth.uca.es/RcmdrPlugin.UCA
-NeedsCompilation: no
-Packaged: 2018-12-30 10:52:19 UTC; rforge
+URL: http://knuth.uca.es/RcmdrPlugin.UCA/
 Repository: CRAN
 Repository/R-Forge/Project: rcmdrpluginuca
-Repository/R-Forge/Revision: 28
-Repository/R-Forge/DateTimeStamp: 2018-12-30 10:25:29
-Date/Publication: 2018-12-30 17:40:11 UTC
+Repository/R-Forge/Revision: 31
+Repository/R-Forge/DateTimeStamp: 2021-02-23 21:39:36
+Date/Publication: 2021-02-23 22:50:03 UTC
+NeedsCompilation: no
+Packaged: 2021-02-23 21:47:20 UTC; rforge
