@@ -1,8 +1,8 @@
 Package: RcmdrPlugin.UCA
 Type: Package
 Title: UCA Rcmdr Plug-in
-Version: 4.4-3
-Date: 2021-04-02
+Version: 4.5-1
+Date: 2021-10-22
 Author: Manuel Munoz-Marquez <manuel.munoz@uca.es>
 Maintainer: Manuel Munoz-Marquez <manuel.munoz@uca.es>
 Depends: IQCC, qcc, qicharts2, randtests, rmarkdown, TeachingDemos,
@@ -17,8 +17,8 @@ License: GPL (>= 3)
 URL: http://knuth.uca.es/RcmdrPlugin.UCA/
 Repository: CRAN
 Repository/R-Forge/Project: rcmdrpluginuca
-Repository/R-Forge/Revision: 35
-Repository/R-Forge/DateTimeStamp: 2021-04-02 09:37:22
-Date/Publication: 2021-04-02 15:00:17 UTC
+Repository/R-Forge/Revision: 36
+Repository/R-Forge/DateTimeStamp: 2021-10-22 07:57:10
+Date/Publication: 2021-10-22 08:50:12 UTC
 NeedsCompilation: no
-Packaged: 2021-04-02 09:47:22 UTC; rforge
+Packaged: 2021-10-22 08:09:44 UTC; rforge
