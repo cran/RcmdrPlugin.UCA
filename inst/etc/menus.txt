@@ -1,7 +1,7 @@
 # Some Rcmdr menus for the RcmdrPlugin.UCA package
 # When the plug-in is loaded, these menus are merged with the standard Rcmdr menus
 
-# last modified: September 2024 by M. Munoz-Marquez
+# last modified: April 2026 by M. Munoz-Marquez
 
 #   type    menu/item         operation/parent  label                                       command/menu      activation           install?
     item    variancesMenu     command           "Single-Sample Variance Test..."            sigmaTest         "numericP()"	   ""
@@ -11,7 +11,7 @@
     menu    predictMenu	      modelsMenu        ""                                          ""                ""                   ""
     item    modelsMenu        cascade           "Predict using active model"  		    predictMenu       "activeModelP()"     ""
     item    predictMenu       command           "Input data and predict..."		    input2predict     "activeModelP()"     ""
-    item    predictMenu       command           "Add predictions to existing dataset..."    predict4dataset   "activeModelP()"     ""
+    item    predictMenu       command           "Predict values for existing dataset..."    predict4dataset   "activeModelP()"     ""
 
 #   menu    SampleSizeMenu    topMenu           ""                                          ""                ""                   ""
 #   item    topMenu           cascade           "Sample Size"                               SampleSizeMenu    ""                   ""

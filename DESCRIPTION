@@ -1,8 +1,8 @@
 Package: RcmdrPlugin.UCA
 Type: Package
 Title: UCA Rcmdr Plug-in
-Version: 5.1-2
-Date: 2024-09-26
+Version: 5.1-3
+Date: 2026-04-13
 Authors@R: person(given = "Manuel",
    family = "Munoz-Marquez",
    role = c("aut", "cre"),
@@ -17,12 +17,9 @@ Description: Some extensions to Rcmdr (R Commander), randomness test,
  made by R-UCA project and used in teaching statistics at University of Cadiz (UCA).
 License: GPL (>= 3)
 URL: http://knuth.uca.es/RcmdrPlugin.UCA/
+NeedsCompilation: no
+Packaged: 2026-04-13 20:52:48 UTC; mmarquez
 Author: Manuel Munoz-Marquez [aut, cre]
 Maintainer: Manuel Munoz-Marquez <manuel.munoz@uca.es>
 Repository: CRAN
-Repository/R-Forge/Project: rcmdrpluginuca
-Repository/R-Forge/Revision: 64
-Repository/R-Forge/DateTimeStamp: 2024-09-26 20:18:46
-Date/Publication: 2024-09-26 21:50:01 UTC
-NeedsCompilation: no
-Packaged: 2024-09-26 20:32:54 UTC; rforge
+Date/Publication: 2026-04-14 00:40:09 UTC

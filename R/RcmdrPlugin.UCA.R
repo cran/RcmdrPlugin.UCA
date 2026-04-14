@@ -23,6 +23,7 @@
     }
 }
 
+## Help menu options
 browseRUCAWebsite <- function() {
     gettext("R-UCA project website")
     browseURL(gettext("https://knuth.uca.es/R/doku.php?id=inicio"))
@@ -38,6 +39,23 @@ checkRUCAversion <- function() {
     browseURL(paste0(gettext("https://knuth.uca.es/version_R-UCA.php?lang=en&version="), version['major'], '.', version['minor']))
 }
 
+
+## Functions to handle with binary variables
+isBinary <- function(x) is.numeric(x) && all((x == 1) | (x == 0) | is.na(x))
+Binaries <- function(dataSet = ActiveDataSet()) listBinaries(dataSet = dataSet)
+BinariesP <- function(n=1) activeDataSetP() && length(listBinaries()) >= n
+listBinaries <- function(dataSet = ActiveDataSet())
+{
+    variables <- listVariables(dataSet)
+    if(length(variables) == 0) return(NULL)
+    index <- sapply(variables, FUN = function(.x) isBinary(eval(parse(text=.x), envir=get(ActiveDataSet(), envir=.GlobalEnv))))
+    if (!any(index)) return(NULL)
+    variables[index]
+}
+## Dicotomic variables are binaries + two level factors
+Dicotomics <- function(dataSet = ActiveDataSet()) listDicotomics(dataSet = dataSet)
+DicotomicsP <- function(n=1) activeDataSetP() && length(listDicotomics()) >= n
+listDicotomics <- function(dataSet = ActiveDataSet()) sort(c(listTwoLevelFactors(dataSet = dataSet), listBinaries(dataSet = dataSet)))
 
 ### Function to input data and predict values using active model
 input2predict <- function() {
@@ -72,7 +90,7 @@ ks2samplesTest <- function() {
         if (x == y) {
             errorCondition(recall=ks2samplesTest, message=gettext("First variable and second one are the same.", domain="R-RcmdrPlugin.UCA"))
             return()
-            }
+        }
         closeDialog()
         ## Apply test
         doItAndPrint(paste("with(", ActiveDataSet(), ", ks.test(", x, ", ", y, "))", sep = ""))
@@ -83,12 +101,12 @@ ks2samplesTest <- function() {
     tkgrid(getFrame(variablesBox2), sticky="w", row = 1, column = 1)
     tkgrid(buttonsFrame, sticky="w", columnspan = 2)
     dialogSuffix()
-    }
+}
 
 ### Function to predict values for existing data set
 predict4dataset <- function() {
     ## To ensure that menu name is included in pot file
-    gettext("Add predictions to existing dataset...", domain="R-RcmdrPlugin.UCA")
+    gettext("Predict values for existing dataset...", domain="R-RcmdrPlugin.UCA")
     dataSets <- listDataSets()
     .activeDataSet <- ActiveDataSet()
     initializeDialog(title=gettextRcmdr("Select Data Set"))
