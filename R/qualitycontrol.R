@@ -24,14 +24,18 @@ gettext("Phase II from parameters (multiple columns)...", domain="R-RcmdrPlugin.
         }
     }
     ## Phase I
-    x1Box <- variableListBox(top, Numeric(), selectmode=ifelse(type %in% types.multicolumn, "single", "multiple"), initialSelection=NULL, title = x1title)
-    n1Box <- variableListBox(top, Numeric(), selectmode="single", initialSelection=NULL, title = n1title)
-    subsetBox(subset.expression = gettextRcmdr("<all valid cases>"))
+    if (phase == '1' || phase == '2') {
+        x1Box <- variableListBox(top, Numeric(), selectmode=ifelse(type %in% types.multicolumn, "single", "multiple"), initialSelection=NULL, title = x1title)
+        n1Box <- variableListBox(top, Numeric(), selectmode="single", initialSelection=NULL, title = n1title)
+        subsetBox(subset.expression = gettextRcmdr("<all valid cases>"))
+    }
     ## Phase II
     if (phase == '2' || phase == 'p') {
         x2Box <- variableListBox(top, Numeric(), selectmode=ifelse(type %in% types.multicolumn, "single", "multiple"), initialSelection=NULL, title = x2title)
         n2Box <- variableListBox(top, Numeric(), selectmode="single", initialSelection=NULL, title = n2title)
         subset2Box(subset.expression = gettextRcmdr("<all valid cases>"))
+    }
+    if (phase == '2') {
         ## Options buttons
         plotall <- tclVar()
         renumber <- tclVar()
@@ -41,7 +45,7 @@ gettext("Phase II from parameters (multiple columns)...", domain="R-RcmdrPlugin.
     }
     onOK <- function() {
         ## Setup and get options values
-        if (phase == '2' || phase == 'p') {
+        if (phase == '2') {
             plotall <- (tclvalue(plotall) == "1")
             renumber <- (tclvalue(renumber) == "1")
         } else {
@@ -63,23 +67,25 @@ gettext("Phase II from parameters (multiple columns)...", domain="R-RcmdrPlugin.
             }
         }
         ## Read phase I data
-        x1 <- getSelection(x1Box)
-        if (length(x1) == 0) {
-            errorCondition(recall = recall, message=gettext("No data variable was selected (Phase I)", domain="R-RcmdrPlugin.UCA"))
-            return()
-        }
-        if (length(x1) == 1 && type %in% types.multicolumn) {
-            errorCondition(recall=recall, message=gettext("Select at least two variables (Phase I)", domain="R-RcmdrPlugin.UCA"))
-            return()
-        }
-        if (type %in% types.withsamplesize) {
-            n1 <- getSelection(n1Box)
-            if (length(n1) == 0) {
-                errorCondition(recall = recall, message=gettext("No sample size variable was selected (Phase I)", domain="R-RcmdrPlugin.UCA"))
+        if (phase == '1' || phase == '2') {
+            x1 <- getSelection(x1Box)
+            if (length(x1) == 0) {
+                errorCondition(recall = recall, message=gettext("No data variable was selected (Phase I)", domain="R-RcmdrPlugin.UCA"))
                 return()
             }
+            if (length(x1) == 1 && type %in% types.multicolumn) {
+                errorCondition(recall=recall, message=gettext("Select at least two variables (Phase I)", domain="R-RcmdrPlugin.UCA"))
+                return()
+            }
+            if (type %in% types.withsamplesize) {
+                n1 <- getSelection(n1Box)
+                if (length(n1) == 0) {
+                    errorCondition(recall = recall, message=gettext("No sample size variable was selected (Phase I)", domain="R-RcmdrPlugin.UCA"))
+                    return()
+                }
+            }
+            subset <- trim.blanks(tclvalue(subsetVariable))
         }
-        subset <- trim.blanks(tclvalue(subsetVariable))
         ## Read phase II data
         if (phase == '2' || phase == 'p') {
             x2 <- getSelection(x2Box)
@@ -122,21 +128,26 @@ gettext("Phase II from parameters (multiple columns)...", domain="R-RcmdrPlugin.
         ##
         ## Build command
         ##
-        command <- paste0("with(", ActiveDataSet(), ", qcc(data = ")
-        command <- paste0(command, ifelse(type %in% types.multicolumn, paste0('cbind(', paste(x1, collapse = ','), ')'), x1))
-        if ((subset != gettextRcmdr("<all valid cases>")) && (subset != "")) command <- paste0(command, '[', subset, ifelse(type %in% types.multicolumn, ', ', ''), ']') 
-        if (type %in% types.withsamplesize) {
-            command <- paste0(command, ", sizes = ", n1)
-            if ((subset != gettextRcmdr("<all valid cases>")) && (subset != "")) {
-                command <- paste0(command, '[', subset, ']')
+        command <- paste0("with(", ActiveDataSet(), ", qcc(")
+        if (phase == '1' || phase == '2') {
+            command <- paste0(command, "data = ", ifelse(type %in% types.multicolumn, paste0('cbind(', paste(x1, collapse = ','), ')'), x1))
+            if ((subset != gettextRcmdr("<all valid cases>")) && (subset != "")) command <- paste0(command, '[', subset, ifelse(type %in% types.multicolumn, ', ', ''), ']') 
+            if (type %in% types.withsamplesize) {
+                command <- paste0(command, ", sizes = ", n1)
+                if ((subset != gettextRcmdr("<all valid cases>")) && (subset != "")) {
+                    command <- paste0(command, '[', subset, ']')
+                }
             }
         }
         if (phase == '2' || phase == 'p') {
-            command <- paste0(command, ", newdata = ")
+            if (phase == '2') command <- paste0(command, ", new")
+            command <- paste0(command, "data = ")
             command <- paste0(command, ifelse(type %in% types.multicolumn, paste0('cbind(', paste(x2, collapse = ','), ')'), x2))
             if ((subset2 != gettextRcmdr("<all valid cases>")) && (subset2 != "")) command <- paste0(command, '[', subset2, ifelse(type %in% types.multicolumn, ', ', ''), ']')
             if (type %in% types.withsamplesize) {
-                command <- paste0(command, ", newsizes = ", n2)
+                command <- paste0(command, ", ")
+                if (phase == '2') command <- paste0(command, "new")
+                command <- paste0(command, "sizes = ", n2)
                 if ((subset2 != gettextRcmdr("<all valid cases>")) && (subset2 != "")) {
                     command <- paste0(command, '[', subset2, ']')
                 }
@@ -149,7 +160,7 @@ gettext("Phase II from parameters (multiple columns)...", domain="R-RcmdrPlugin.
         }
         command <- paste0(command, ", title = \"", graphtitle, "\"")
         if (phase == '2' || phase == 'p') {
-            if (!plotall) command <- paste0(command, ", chart.all = ", plotall)
+            if (phase == '2' && !plotall) command <- paste0(command, ", chart.all = ", plotall)
             ## Compute length of x2
             if (renumber) {
                 lx2 <- paste0("with(", ActiveDataSet())
@@ -183,21 +194,23 @@ gettext("Phase II from parameters (multiple columns)...", domain="R-RcmdrPlugin.
         }
         tkgrid(dataFrame, sticky = "w")
     }
-    
     ## Phase I
-    tkgrid(getFrame(x1Box), sticky = "w")
-    if (type %in% types.withsamplesize) {
-        tkgrid(getFrame(n1Box), sticky = "w", row = 0 + deltarow, column = 1)
+    if (phase == '1' || phase == '2') {
+        tkgrid(getFrame(x1Box), sticky = "w")
+        if (type %in% types.withsamplesize) {
+            tkgrid(getFrame(n1Box), sticky = "w", row = 0 + deltarow, column = 1)
+        }
+        tkgrid(subsetFrame, sticky = "w")
     }
-    tkgrid(subsetFrame, sticky = "w")
     ## Phase II
     if (phase == '2' || phase == 'p') {
-        tkgrid(getFrame(x2Box), sticky = "w")
+        tkgrid(getFrame(x2Box), sticky = "w", row = 2 + deltarow)
         if (type %in% types.withsamplesize) {
             tkgrid(getFrame(n2Box), sticky = "w", row = 2 + deltarow, column = 1)
         }
         tkgrid(subset2Frame, sticky = "w")
-        ## type <- tclvalue(typeVariable)
+    }
+    if (phase == '2') {
         tkgrid(plotallcheckBox, tklabel(optionsFrame, text = gettext("Plot all data", domain="R-RcmdrPlugin.UCA")), sticky = "w")
         tkgrid(renumbercheckBox, tklabel(optionsFrame, text = gettext("Renumber 2nd phase data", domain="R-RcmdrPlugin.UCA")), sticky = "w")
         tkgrid(optionsFrame, sticky = "w")

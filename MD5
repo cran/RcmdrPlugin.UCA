@@ -1,9 +1,9 @@
-29c381414ebb8bbb1e705ee6e78e81de *ChangeLog
-0fcfbf022a3e748c25e27211f9fb9c97 *DESCRIPTION
+76a2ee5510c637fe315fcf2b8db0d6f3 *ChangeLog
+cd5ba58037dd5f07fb5b336c06ad8e86 *DESCRIPTION
 922293b7f28f20dbbb6449945fe39ef2 *NAMESPACE
 e486f9288fd8f328c11bb36941eabffe *R/RcmdrPlugin.UCA.R
 f673ea4173e91c939facb48bfc47b0cc *R/globals.R
-bd23469ae025d0fd3d5c3f3d32c84aef *R/qualitycontrol.R
+3bfa1cbde6af31a1377d35ce04b63808 *R/qualitycontrol.R
 243b19e86afed2e4505467a3c2780d3a *build/vignette.rds
 8a9ed3d0e9e3579028550cebf51cbd69 *demo/00Index
 88329201637ea5e8960785d415faf602 *demo/aleatoriedad_factor_dos_niveles.R
@@ -18,10 +18,10 @@ bd23469ae025d0fd3d5c3f3d32c84aef *R/qualitycontrol.R
 b8e7387e0667334790763e031bf27328 *demo/test_sigma.R
 3a90d88a29e4db309a9008d7f19024d7 *inst/doc/additions.R
 ad41c776deb80bc1a560a38fad9e12d1 *inst/doc/additions.Rmd
-2100e0f3668ebf1fd5800b61e212a7fb *inst/doc/additions.html
+93dc1579926e99118d71df3d9191ae5f *inst/doc/additions.html
 233b7a7d0b7fc2e19bf954d4e50b30e6 *inst/doc/adiciones.R
 638701ecb9328916423b2e457e74fb2a *inst/doc/adiciones.Rmd
-2ad973141871d78bbdc1af86b88240da *inst/doc/adiciones.html
+ab2f71fff20b40bff4efc535a8fc932f *inst/doc/adiciones.html
 c92a6c2b124a8c9e562482a06211f348 *inst/etc/menus.txt
 108dc3c96c71e4e9efd466e742332b98 *inst/po/RcmdrPlugin.UCA-es/LC_MESSAGES/R-RcmdrPlugin.UCA.mo
 dd549a4b26eaab8dc7cba39b485abecf *inst/po/en@quot/LC_MESSAGES/R-RcmdrPlugin.UCA.mo
@@ -44,6 +44,6 @@ bc8ce7e51b0473dae776260843ed169a *man/qccMenu.es.Rd
 5fb367f753dc2bb34f1ed5225e9a7da5 *po/R-RcmdrPlugin.UCA-es.mo
 0898ac3413f165660377b5d252b59ced *po/R-RcmdrPlugin.UCA-es.po
 5fb367f753dc2bb34f1ed5225e9a7da5 *po/R-RcmdrPlugin.UCA.mo
-34bd8d89fb7c670e356a7e6a87073e56 *po/R-RcmdrPlugin.UCA.pot
+16df0186831085d2c72e8f4ef9993806 *po/R-RcmdrPlugin.UCA.pot
 ad41c776deb80bc1a560a38fad9e12d1 *vignettes/additions.Rmd
 638701ecb9328916423b2e457e74fb2a *vignettes/adiciones.Rmd
